@@ -11,4 +11,5 @@ object Utils {
     fun toInitials(firstName:String?, lastName:String?): String? {
         return "${firstName?.getOrNull(0)} ${lastName?.getOrNull(0)}"
     }
+
 }
