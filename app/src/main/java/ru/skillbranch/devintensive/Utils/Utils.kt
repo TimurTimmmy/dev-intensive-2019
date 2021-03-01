@@ -7,4 +7,8 @@ object Utils {
         val lastName = parts?.getOrNull(0)
         return Pair(firstName, lastName)
     }
+
+    fun toInitials(firstName:String?, lastName:String?): String? {
+        return "${firstName?.getOrNull(0)} ${lastName?.getOrNull(0)}"
+    }
 }
