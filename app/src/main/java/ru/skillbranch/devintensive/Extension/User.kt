@@ -2,11 +2,12 @@ package ru.skillbranch.devintensive.Extension
 
 import ru.skillbranch.devintensive.Models.User
 import ru.skillbranch.devintensive.Models.UserView
+import ru.skillbranch.devintensive.Utils.Utils
 import java.util.*
 
 fun User.toUserView() : UserView {
-    val nickName = ""
-    val initials = ""
+    val nickName = Utils.transliteration("$firstName $lastName")
+    val initials = Utils.toInitials(firstName, lastName)
     val status = if (lastVisit == null) "Ниразу не был" else if (isOnline) "online" else ("Последний раз был ${lastVisit!!.humanizeDiff()}")
 
     return UserView(
@@ -19,6 +20,3 @@ fun User.toUserView() : UserView {
     )
 }
 
-private fun Date.humanizeDiff() : String{
-TODO()
-}

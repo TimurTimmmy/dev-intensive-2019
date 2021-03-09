@@ -12,4 +12,9 @@ object Utils {
         return "${firstName?.getOrNull(0)} ${lastName?.getOrNull(0)}"
     }
 
+    fun transliteration(payload: String, divider:String = " "): String {
+        // TODO: 09.03.2021
+        return ""
+    }
+
 }
